@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sibin Lounge</title>
+</head>
+<body>
+    {% for cocktails in cocktails %}
+        {{ cocktail.cocktail_name }}<br>
+        {{ cocktail.method_type }}<br>
+        {{ cocktail.cocktail_ingredients }}<br>
+        {{ cocktail.cocktail_method }}<br>
+        {{ cocktail.cocktail_garnish }}<br>
+    {% endfor %}
+</body>
+</html>
