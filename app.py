@@ -14,15 +14,14 @@ app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
 
-
-mongo = Flask(__name__)
+mongo = PyMongo(app)
 
 
 @app.route("/")
-@app.route("/get_cocktails")
-def get_cocktails():
-    cocktails = mongo.db.cocktails.find()
-    return render_template("cocktails.html", cocktails=cocktails)
+@app.route("/get_drinks")
+def get_drinks():
+    drinks = mongo.db.drinks.find()
+    return render_template("drinks.html", drinks=drinks)
 
 
 if __name__ == "__main__":
